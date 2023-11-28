@@ -7,3 +7,7 @@ export type TSemester = {
     startMonth: TMonth,
     endMonth: TMonth
 }
+
+export type TsemesterNameCodeMapper = {
+    [key: string]: string;
+}

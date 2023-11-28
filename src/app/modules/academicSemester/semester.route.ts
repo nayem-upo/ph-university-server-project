@@ -5,7 +5,10 @@ import { SemesterValidation } from './semester.validation';
 
 const router = express.Router();
 
-router.post('/create-semester', vaidateRequest(SemesterValidation), SemesterController.createSemester)
+router.get('/', SemesterController.getSemesters);
+router.get('/:semesterId', SemesterController.getSingleSemester)
+router.post('/create-semester', vaidateRequest(SemesterValidation), SemesterController.createSemester);
+router.patch('/:semesterId', vaidateRequest(SemesterValidation), SemesterController.updateSingleSemester)
 
 
 export const SemesterRoutes = router;
